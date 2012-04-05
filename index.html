@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="laravel-artisan-bundle : A bundle to expose `artisan` to the web" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>laravel-artisan-bundle</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/joecwallace/laravel-artisan-bundle">Fork Me on GitHub</a>
+
+          <h1 id="project_title">laravel-artisan-bundle</h1>
+          <h2 id="project_tagline">A bundle to expose `artisan` to the web</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/joecwallace/laravel-artisan-bundle/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/joecwallace/laravel-artisan-bundle/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Artisan bundle for Laravel</h1>
+
+<h2>Description</h2>
+
+<p>This bundle exposes artisan to the web. As such, it probably should not be used in a production environment. You can password protect it, I guess, but it's still risky. I wrote it primarily to use migrations in a PHP Fog app, where it also worked nicely for running tasks to generate test data.</p>
+
+<h2>Installation</h2>
+
+<h4>Add something like this to <code>application/bundles.php</code>:</h4>
+
+<pre><code>return array(
+    'artisan' =&gt; array(
+        'handles' =&gt; 'artisan',
+    ),
+);
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Use URLs like artisan tasks, replacing spaces with <code>/</code>, double colons (<code>::</code>) with <code>+</code>, and colons (<code>:</code>) with <code>.</code>.</p>
+
+<p>For example, the migrate command</p>
+
+<pre><code>php artisan migrate
+</code></pre>
+
+<p>becomes</p>
+
+<pre><code><a href="http://my.awesome.app/artisan/migrate">http://my.awesome.app/artisan/migrate</a>
+</code></pre>
+
+<p>and the task</p>
+
+<pre><code>php artisan admin::generate:list
+</code></pre>
+
+<p>would be</p>
+
+<pre><code><a href="http://my.awesome.app/artisan/admin+generate.list">http://my.awesome.app/artisan/admin+generate.list</a>
+</code></pre>
+
+<p>Parameters are allowed too.</p>
+
+<pre><code>php artisan notify someone
+</code></pre>
+
+<p>is</p>
+
+<pre><code><a href="http://my.awesome.app/artisan/notify/someone">http://my.awesome.app/artisan/notify/someone</a>
+</code></pre>
+
+<h2>Enjoy</h2>
+
+<p>I hope someone else finds this useful at some point.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">laravel-artisan-bundle maintained by <a href="https://github.com/joecwallace">joecwallace</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
