@@ -1,5 +1,9 @@
 # Artisan bundle for Laravel
 
+## Laravel 4
+
+For a version of this package compatible with Laravel 4, please see [web-artisan](https://github.com/joecwallace/web-artisan).
+
 ## Description
 
 This bundle exposes artisan to the web. As such, it probably should not be used in a production environment. You can password protect it, I guess, but it's still risky. I wrote it primarily to use migrations in a PHP Fog app, where it also worked nicely for running tasks to generate test data.
